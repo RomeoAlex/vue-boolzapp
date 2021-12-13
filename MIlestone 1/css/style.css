@@ -7,7 +7,7 @@
 body{
     width:100%;
     height:100vh;
-    background: linear-gradient(to bottom, #009588 10%, #d9dbd5 0%);
+    background: linear-gradient(to bottom, #009588 20%, #d9dbd5 0%);
 }
 
 main{
@@ -17,34 +17,98 @@ main{
     width:80%;
     max-width: 900px;
     margin:auto;
-    background-color: burlywood;
-    height: 900px;
+    min-height: 900px;
     display: flex;
 }
 /* COLUMNS */
+.top{
+    height: 80px;
+    background-color: #eaeaea;
+    padding: 5px 5px;
+    vertical-align: middle;
+}
+.top img{
+    height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.top span{
+
+}
+.user-text{
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: bold;
+}
+/* COLUMN LEFT*/
 .col-left{
     width:40%;
     border-right: 2px solid #e5e5e5;
         /* test */
-        background-color: cadetblue;
+        background-color: white;
 }
+.notifications{
+    height:100px;
+    background-color: #8edafb;
+    display: flex;
+}
+
+.bell{
+    padding: 10px 10px;
+}
+.bell i{
+    background-color: white;
+    color:#8edafb;
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    font-size: 40px;
+    
+}
+.notifications-text{
+    margin-top: 30px;
+}
+/* FINDER */
+.finder{
+    padding-top:5px ;
+    height: 50px;
+    background-color: #fafafa;
+    width:100%;
+}
+.finder-input{
+    height: 40px;
+    padding: 5px 5px;
+    width:98%;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    color: #bec1c3;
+    line-height: 40px;
+}
+.finder i{
+    margin-left: 20px;
+    width:10%;
+}
+.finder input{
+    border: hidden;
+    width:70%;
+}
+/* USERS MESSAGES */
+.users-messages ul{
+    list-style: none;
+}
+.users-messages ul li{
+    padding:5px;
+}
+.users-messages ul li img{
+    height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+}
+/* COLUMN RIGHT*/
 .col-right{
     width:60%;
     background-image: url("../img/mine.jpg");
-}
-.top{
-    height: 100px;
-    background-color: #eaeaea;
-    line-height: 100px;
-}
-.top img{
-    height: 80px;
-    display: inline-block;
-    border-radius: 50%;
-    line-height: 100px;
-}
-.top span{
-    height: 80px;
-    border-radius: 50%;
-    line-height: 100px;
 }

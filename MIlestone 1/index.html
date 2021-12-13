@@ -5,16 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-
+    <div id="root">
     <main>
         <div class="main_container">
             <div class="col-left">
                 <div class="top left">
-                    <img src="img/avatar_io.jpg" alt="">
-                    <span>blalalalalal</span>
+                    <img src="img/avatar_io.jpg" alt="avatar_io">
+                    <span class="user-text">blalalalalal</span>
+                </div>
+                <div class="notifications">
+                    <div class="bell">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="notifications-text">
+                        <span> Ricevi notifiche di nuovi messaggi</span>
+                        <a href="">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <div class="finder">
+                    <div class="finder-input">
+                        <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <div class="users-messages">
+                    <ul>
+                        <li v-for="contacts in contacts">
+                            <img :src="'img/avatar' + contacts.avatar + '.jpg'" :alt="contacts.name"> {{contacts.name}}
+                        </li>
+                    </ul>
 
                 </div>
             </div>
@@ -25,9 +49,10 @@
             </div>
         </div>
     </main>
-    <div id="#root">
+    
         
     </div>
-    <script text="javascript" src="script.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

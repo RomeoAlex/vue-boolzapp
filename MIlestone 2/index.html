@@ -10,9 +10,10 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    <div id="root">
+    
     <main>
         <div class="main_container">
+            <div id="root"></div>
             <div class="col-left">
                 <div class="top left">
                     <img src="img/avatar_io.jpg" alt="avatar_io">
@@ -49,22 +50,24 @@
                 <div class="message-container">
                     <!-- per leggere le informazione dell'elemento correttemente attivo faccio un v-for sul contatto attivo nell'html -->
                     <!-- <div v-for="message in conctacts[active].messages" class="message sent"></div> -->
-                    <div class="message sent">
-
-                    </div>
-                    <div class="message ">
-
+                    <div v-for="message in conctacts[activeContact].messages" 
+                    class="message"
+                    :class="message.status">
+                    {{message.text}}
+                    <div class="message-data">
+                        {{message.date}} 
                     </div>
                 </div>
                 <div class="message-sender">
 
                 </div>
             </div>
+            </div>
         </div>
     </main>
     
         
-    </div>
+    
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>

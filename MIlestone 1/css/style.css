@@ -21,14 +21,21 @@ main{
     margin:auto;
     display: flex;
     /* TEST */
-    min-height: 900px;
+    min-height: calc(100vh - 40px);
 }
+
 /* COLUMNS */
 .top{
     height: 80px;
     background-color: #eaeaea;
     padding: 5px 5px;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-container{
+    display: flex;
+    align-items: center;
 }
 .top img{
     height: 70px;
@@ -38,10 +45,18 @@ main{
 .top span{
 
 }
-.user-text{
-    vertical-align: middle;
-    display: inline-block;
+.user{
     font-weight: bold;
+    margin-left: 5px;
+}
+.top-icons{
+    margin-right: 20px;
+    font-size: 20px;
+    color:#6b7477 ;
+}
+.top-icons i{
+    margin-right: 5px;
+   
 }
 /* COLUMN LEFT*/
 .col-left{
@@ -104,6 +119,7 @@ main{
 }
 .users-messages ul li{
     padding:5px;
+    border-top: 1px solid #bec1c3;
 }
 .users-messages ul li img{
     height: 70px;
@@ -114,9 +130,13 @@ main{
 .col-right{
     width:60%;
     background-image: url("../img/mine.jpg");
-
 }
 /* CONTATTO ATTIVO */
+.active-chat-user{
+    display: flex;
+    align-items: center;
+}
+
 .active-contact{
 
 }
@@ -164,6 +184,6 @@ main{
 .message-sender input{
     width: 80%;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 15px;
     border:1px solid #f3eeea;
 }

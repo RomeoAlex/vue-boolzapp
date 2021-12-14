@@ -10,64 +10,88 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    
-    <main>
-        <div class="main_container">
-            <div id="root"></div>
-            <div class="col-left">
-                <div class="top left">
-                    <img src="img/avatar_io.jpg" alt="avatar_io">
-                    <span class="user-text">blalalalalal</span>
-                </div>
-                <div class="notifications">
-                    <div class="bell">
-                        <i class="fas fa-bell-slash"></i>
-                    </div>
-                    <div class="notifications-text">
-                        <span> Ricevi notifiche di nuovi messaggi</span>
-                        <a href="">Attiva notifiche desktop</a>
-                    </div>
-                </div>
-                <div class="finder">
-                    <div class="finder-input">
-                        <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-                </div>
-                <div class="users-messages">
-                    <ul>
-                        <li v-for="contacts in contacts">
-                            <img :src="'img/avatar' + contacts.avatar + '.jpg'" :alt="contacts.name"> {{contacts.name}}
-                        </li>
-                    </ul>
+    <div id="root">
+        <div class="app-container">    
+            <main>
+                <div class="main_container">
+                    <div class="col-left">
+                        <div class="top left">
+                            <div class="user-container">
+                                <img src="img/avatar_io.jpg" alt="avatar_io">
+                                <span class="user self">Nome Utente</span>
+                            </div>
+                            <div class="user top-icons">
+                                <i class="fas fa-circle-notch"></i>
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        
+                        </div>
+                        <div class="notifications">
+                            <div class="bell">
+                                <i class="fas fa-bell-slash"></i>
+                            </div>
+                            <div class="notifications-text">
+                                <span> Ricevi notifiche di nuovi messaggi</span>
+                                <a href="">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <div class="finder">
+                            <div class="finder-input">
+                                <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                        </div>
+                        <div class="users-messages">
+                            <ul>
+                                <li v-for="contacts in contacts" class="contact">
+                                    <img :src="'img/avatar' + contacts.avatar + '.jpg'" :alt="contacts.name"> {{contacts.name}}
+                                </li>
+                            </ul>
 
-                </div>
-            </div>
-            <div class="col-right">
-                <div class="top right">
-
-                </div>
-                <div class="message-container">
-                    <!-- per leggere le informazione dell'elemento correttemente attivo faccio un v-for sul contatto attivo nell'html -->
-                    <!-- <div v-for="message in conctacts[active].messages" class="message sent"></div> -->
-                    <div v-for="message in conctacts[activeContact].messages" 
-                    class="message"
-                    :class="message.status">
-                    {{message.text}}
-                    <div class="message-data">
-                        {{message.date}} 
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="top right">
+                            <div class="active-chat-user">
+                                <img src="img/avatar_io.jpg" alt="avatar_io">
+                                <span class="user name">blalalalalal</span>
+                            </div>
+                            <div class="active-chat top-icons">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                                <i class="fas fa-paperclip"></i>
+                            </div>                               
+                        </div>
+                        <div class="message-container">
+                            <div class="message sent">
+                                Ciao sono un messaggio inviato
+                                <div class="time">
+                                    28/03/2020 10:10:40
+                                </div>
+                            </div>
+                            <div class="message received">
+                                ciao sono un messaggio ricevuto
+                                <div class="time">
+                                    28/03/2020 10:10:40
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-sender">
+                            <i class="far fa-surprise"></i>
+                            <!-- <div class="input-box">
+                            </div> -->
+                            <input type="text" placeholder=" Scrivi un messaggio">
+                            
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="message-sender">
-
-                </div>
-            </div>
-            </div>
-        </div>
-    </main>
-    
+            </main>
+        </div>  
         
-    
+    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>

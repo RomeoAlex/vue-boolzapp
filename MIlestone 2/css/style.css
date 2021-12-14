@@ -5,11 +5,13 @@
     box-sizing: border-box;
 }
 body{
+    /* il body non si tocca!!! */
+}
+.app-container{
     width:100%;
     height:100vh;
     background: linear-gradient(to bottom, #009588 20%, #d9dbd5 0%);
 }
-
 main{
     padding-top: 20px;
 }
@@ -17,15 +19,23 @@ main{
     width:80%;
     max-width: 900px;
     margin:auto;
-    min-height: 900px;
     display: flex;
+    /* TEST */
+    min-height: calc(100vh - 40px);
 }
+
 /* COLUMNS */
 .top{
     height: 80px;
     background-color: #eaeaea;
     padding: 5px 5px;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-container{
+    display: flex;
+    align-items: center;
 }
 .top img{
     height: 70px;
@@ -35,10 +45,18 @@ main{
 .top span{
 
 }
-.user-text{
-    vertical-align: middle;
-    display: inline-block;
+.user{
     font-weight: bold;
+    margin-left: 5px;
+}
+.top-icons{
+    margin-right: 20px;
+    font-size: 20px;
+    color:#6b7477 ;
+}
+.top-icons i{
+    margin-right: 5px;
+   
 }
 /* COLUMN LEFT*/
 .col-left{
@@ -101,6 +119,7 @@ main{
 }
 .users-messages ul li{
     padding:5px;
+    border-top: 1px solid #bec1c3;
 }
 .users-messages ul li img{
     height: 70px;
@@ -111,4 +130,60 @@ main{
 .col-right{
     width:60%;
     background-image: url("../img/mine.jpg");
+}
+/* CONTATTO ATTIVO */
+.active-chat-user{
+    display: flex;
+    align-items: center;
+}
+
+.active-contact{
+
+}
+/* CONTENITORE MESSAGGI */
+.message-container{
+    padding: 40px;
+    /* test */
+    height: calc(100% - 160px);
+}
+.message{
+    position:relative;
+    padding: 20px;
+    border-radius: 15px;
+    margin:20px 0px;
+}
+.time{
+    position:absolute;
+    bottom: 5px;
+    right:5px;
+    font-size: 10px;
+    color:#bec1c3;
+}
+.sent{
+    float:left;
+    background-color: white;
+}
+.received{
+    float:right;
+    background-color: #d5f9ba;
+}
+/* CONTENITORE INPUT MESSAGGI  */
+.message-sender{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* width */
+    background-color: #f3eeea;
+    align-items: center;
+}
+.message-sender i{
+    font-size: 20px;
+    color:#6b7477 ;
+}
+.message-sender input{
+    width: 80%;
+    height: 50px;
+    border-radius: 15px;
+    border:1px solid #f3eeea;
 }

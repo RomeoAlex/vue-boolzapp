@@ -3,6 +3,7 @@ const app = new Vue(
 	{
 		el: '#root',
 		data:{
+			nameFilter:'',
 			// aggiungo variabile per il testo in entrata
 			newMessageSent: '',
 			activeContact : 0,
@@ -116,6 +117,16 @@ const app = new Vue(
 						this.contacts[this.activeContact].messages.push(receivedMessage);
 					},1000);
 				}
+			},
+			filterContacts: function(){
+				this.contacts.forEach((element) =>{
+					if( element.name.toLowerCase().includes(this.nameFilter.toLowerCase())){
+						element.visible = true;
+					}else{
+						element.visible = false;
+					}
+				}
+				)
 			}
 		},
 	}

@@ -39,12 +39,16 @@
                         <div class="finder">
                             <div class="finder-input">
                                 <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" 
+                            placeholder="Cerca o inizia una nuova chat"
+                            v-model="nameFilter"
+                            @keyup="filterContacts()">
                             </div>
                         </div>
                         <div class="users-messages">
                             <ul>
-                                <li v-for="(contacts, index) in contacts" 
+                                <li v-for="(contacts, index) in contacts"
+                                v-if="contacts.visible" 
                                 class="contact"
                                 :class="{'active-contact': index === activeContact}"
                                 @click="changeContact(index)"

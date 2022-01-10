@@ -97,23 +97,25 @@ const app = new Vue(
 				this.activeContact = index;
 			},
 			sendMessage: function(){
-				const newMessage = {
-					date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-					text: this.newMessageSent,
-					status: 'sent'
-				};
-				this.contacts[this.activeContact].messages.push(newMessage);
-				// pulisco la barra di inserimento
-				this.newMessageSent = '';
-				// uso arrow function per mantenere lo scope siccome è una funzione dentro ad una funzione
-				setTimeout(() => {
-					const receivedMessage = {
+				if(this.newMessageSent.trim().length > 0){
+					const newMessage = {
 						date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-					text: 'ok',
-					status: 'received'
+						text: this.newMessageSent,
+						status: 'sent'
 					};
-					this.contacts[this.activeContact].messages.push(receivedMessage);
-				},1000);
+					this.contacts[this.activeContact].messages.push(newMessage);
+					// pulisco la barra di inserimento
+					this.newMessageSent = '';
+					// uso arrow function per mantenere lo scope siccome è una funzione dentro ad una funzione
+					setTimeout(() => {
+						const receivedMessage = {
+							date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+						text: 'ok',
+						status: 'received'
+						};
+						this.contacts[this.activeContact].messages.push(receivedMessage);
+					},1000);
+				}
 			}
 		},
 	}

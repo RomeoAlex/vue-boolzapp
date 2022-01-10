@@ -3,7 +3,6 @@ const app = new Vue(
 	{
 		el: '#root',
 		data:{
-			
 			contacts: [
 				{
 					name: 'Michele',
@@ -91,7 +90,7 @@ const app = new Vue(
 			]
 		},
 		methods:{
-
+			// dataText : dayjs().format("DD/MM/YYYY HH:mm:ss"),
 		},
 	}
 );

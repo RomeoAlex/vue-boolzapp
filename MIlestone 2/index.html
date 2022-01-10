@@ -44,7 +44,10 @@
                         </div>
                         <div class="users-messages">
                             <ul>
-                                <li v-for="contacts in contacts" class="contact">
+                                <li v-for="(contacts, index) in contacts" 
+                                class="contact"
+                                @click="changeContact(index)"
+                                >
                                     <img :src="'img/avatar' + contacts.avatar + '.jpg'" :alt="contacts.name"> {{contacts.name}}
                                 </li>
                             </ul>
@@ -64,18 +67,18 @@
                             </div>                               
                         </div>
                         <div class="message-container">
-                            <div class="message sent">
-                                Ciao sono un messaggio inviato
+                            <div v-for="message in contacts[activeContact].messages" class="message" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                                {{message.text}}
                                 <div class="time">
-                                    28/03/2020 10:10:40
+                                    {{message.date}}
                                 </div>
                             </div>
-                            <div class="message received">
+                            <!-- <div class="message received">
                                 ciao sono un messaggio ricevuto
                                 <div class="time">
                                     28/03/2020 10:10:40
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="message-sender">
                             <i class="far fa-surprise"></i>

@@ -145,12 +145,15 @@ main{
     padding: 40px;
     /* test */
     height: calc(100% - 160px);
+    display: flex;
+    flex-direction: column;
 }
 .message{
     position:relative;
     padding: 20px;
     border-radius: 15px;
     margin:20px 0px;
+    
 }
 .time{
     position:absolute;
@@ -160,11 +163,12 @@ main{
     color:#bec1c3;
 }
 .sent{
-    float:left;
+    
+    align-self: flex-start;
     background-color: white;
 }
 .received{
-    float:right;
+    align-self: flex-end;
     background-color: #d5f9ba;
 }
 /* CONTENITORE INPUT MESSAGGI  */

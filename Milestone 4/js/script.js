@@ -103,8 +103,6 @@ const app = new Vue(
 					status: 'sent'
 				};
 				this.contacts[this.activeContact].messages.push(newMessage);
-				// pulisco la barra di inserimento
-				this.newMessageSent = '';
 				// uso arrow function per mantenere lo scope siccome è una funzione dentro ad una funzione
 				setTimeout(() => {
 					const receivedMessage = {

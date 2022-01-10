@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="app-container">    
+            <main>
+                <div class="main_container">
+                    <div class="col-left">
+                        <div class="top left">
+                            <div class="user-container">
+                                <img src="img/avatar_io.jpg" alt="avatar_io">
+                                <span class="user self">Nome Utente</span>
+                            </div>
+                            <div class="user top-icons">
+                                <i class="fas fa-circle-notch"></i>
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        
+                        </div>
+                        <div class="notifications">
+                            <div class="bell">
+                                <i class="fas fa-bell-slash"></i>
+                            </div>
+                            <div class="notifications-text">
+                                <span> Ricevi notifiche di nuovi messaggi</span>
+                                <a href="">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <div class="finder">
+                            <div class="finder-input">
+                                <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                        </div>
+                        <div class="users-messages">
+                            <ul>
+                                <li v-for="(contacts, index) in contacts" 
+                                class="contact"
+                                :class="{'active-contact': index === activeContact}"
+                                @click="changeContact(index)"
+                                >
+                                    <img :src="'img/avatar' + contacts.avatar + '.jpg'" :alt="contacts.name"> {{contacts.name}}
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="top right">
+                            <div class="active-chat-user">
+                                <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="avatar_io">
+                                <span class="user name">{{ contacts[activeContact].name}}</span>
+                            </div>
+                            <div class="active-chat top-icons">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                                <i class="fas fa-paperclip"></i>
+                            </div>                               
+                        </div>
+                        <div class="message-container">
+                            <div v-for="message in contacts[activeContact].messages" class="message" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                                {{message.text}}
+                                <div class="time">
+                                    {{message.date}}
+                                </div>
+                            </div>
+                            <!-- <div class="message received">
+                                ciao sono un messaggio ricevuto
+                                <div class="time">
+                                    28/03/2020 10:10:40
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="message-sender">
+                            <i class="far fa-surprise"></i>
+                            <!-- <div class="input-box">
+                            </div> -->
+                            <input type="text" placeholder=" Scrivi un messaggio" 
+                            v-model="newMessageSent"
+                            @keyup.enter="sendMessage()"
+                            >
+                            
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        
+                    </div>
+                </div>
+            </main>
+        </div>  
+        
+    </div>
+    <!-- includo dayjs per le date e ore -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

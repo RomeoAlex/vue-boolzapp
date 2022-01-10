@@ -46,6 +46,7 @@
                             <ul>
                                 <li v-for="(contacts, index) in contacts" 
                                 class="contact"
+                                :class="{'active-contact': index === activeContact}"
                                 @click="changeContact(index)"
                                 >
                                     <img :src="'img/avatar' + contacts.avatar + '.jpg'" :alt="contacts.name"> {{contacts.name}}
@@ -57,8 +58,8 @@
                     <div class="col-right">
                         <div class="top right">
                             <div class="active-chat-user">
-                                <img src="img/avatar_io.jpg" alt="avatar_io">
-                                <span class="user name">blalalalalal</span>
+                                <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="avatar_io">
+                                <span class="user name">{{ contacts[activeContact].name}}</span>
                             </div>
                             <div class="active-chat top-icons">
                                 <i class="fas fa-search"></i>

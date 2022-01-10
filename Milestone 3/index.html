@@ -85,7 +85,10 @@
                             <i class="far fa-surprise"></i>
                             <!-- <div class="input-box">
                             </div> -->
-                            <input type="text" placeholder=" Scrivi un messaggio">
+                            <input type="text" placeholder=" Scrivi un messaggio" 
+                            v-model="newMessageSent"
+                            @keyup.enter="sendMessage()"
+                            >
                             
                             <i class="fas fa-microphone"></i>
                         </div>
@@ -96,7 +99,8 @@
         </div>  
         
     </div>
-
+    <!-- includo dayjs per le date e ore -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

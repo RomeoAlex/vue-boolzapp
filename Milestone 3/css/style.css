@@ -153,6 +153,7 @@ main{
     padding: 20px;
     border-radius: 15px;
     margin:20px 0px;
+    min-width: 120px;
     
 }
 .time{
@@ -163,13 +164,12 @@ main{
     color:#bec1c3;
 }
 .sent{
-    
-    align-self: flex-start;
-    background-color: white;
-}
-.received{
     align-self: flex-end;
     background-color: #d5f9ba;
+}
+.received{
+    align-self: flex-start;
+    background-color: white;
 }
 /* CONTENITORE INPUT MESSAGGI  */
 .message-sender{

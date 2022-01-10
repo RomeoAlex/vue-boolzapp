@@ -163,13 +163,12 @@ main{
     color:#bec1c3;
 }
 .sent{
-    
-    align-self: flex-start;
-    background-color: white;
-}
-.received{
     align-self: flex-end;
     background-color: #d5f9ba;
+}
+.received{
+    align-self: flex-start;
+    background-color: white;
 }
 /* CONTENITORE INPUT MESSAGGI  */
 .message-sender{

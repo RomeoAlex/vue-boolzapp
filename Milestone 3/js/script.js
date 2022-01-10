@@ -3,6 +3,8 @@ const app = new Vue(
 	{
 		el: '#root',
 		data:{
+			// aggiungo variabile per il testo in entrata
+			newMessageSent: '',
 			activeContact : 0,
 			contacts: [
 				{
@@ -93,6 +95,23 @@ const app = new Vue(
 		methods:{
 			changeContact : function(index){
 				this.activeContact = index;
+			},
+			sendMessage: function(){
+				const newMessage = {
+					date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+					text: this.newMessageSent,
+					status: 'sent'
+				};
+				this.contacts[this.activeContact].messages.push(newMessage);
+				// uso arrow function per mantenere lo scope siccome è una funzione dentro ad una funzione
+				setTimeout(() => {
+					const receivedMessage = {
+						date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+					text: 'ok',
+					status: 'received'
+					};
+					this.contacts[this.activeContact].messages.push(receivedMessage);
+				},1000);
 			}
 		},
 	}

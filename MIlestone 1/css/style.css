@@ -160,12 +160,12 @@ main{
     color:#bec1c3;
 }
 .sent{
-    float:left;
-    background-color: white;
+    align-self: flex-end;
+    background-color: #d5f9ba;
 }
 .received{
-    float:right;
-    background-color: #d5f9ba;
+    align-self: flex-start;
+    background-color: white;
 }
 /* CONTENITORE INPUT MESSAGGI  */
 .message-sender{
